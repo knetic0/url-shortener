@@ -58,7 +58,7 @@ URL Shortener, uzun URL'leri kısaltan bir web uygulamasıdır. Bu proje **Java 
 ## API Kullanımı
 **Kısa URL oluşturma:**
 ```bash
-POST /api/shorten
+POST /api/protected/url/create
 Body: { "originalUrl": "https://example.com" }
 Response: { "shortUrl": "http://localhost:8080/abc123", "originalUrl": "https://example.com" }
 ```
