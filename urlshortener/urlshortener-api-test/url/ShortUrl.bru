@@ -1,0 +1,21 @@
+meta {
+  name: ShortUrl
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:8080/api/protected/url/create
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtZWhtZXQuc29sYWsiLCJpYXQiOjE3MzgwODA4OTgsImV4cCI6MTczODA4NDQ5OH0.a-dRItk4IxAVomAUYd0PqCwQuKEVbUeQTsdqYd7SkRc
+}
+
+body:json {
+  {
+    "originalUrl": "https://chatgpt.com/c/67990132-d09c-8013-8438-bcaa5f117f90"
+  }
+}

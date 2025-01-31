@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "urlshortener-api-test",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

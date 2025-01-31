@@ -1,0 +1,15 @@
+meta {
+  name: TokenCheck
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:8080/api/protected/token-check
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtZWhtZXQuc29sYWsiLCJpYXQiOjE3MzgxNDI2ODAsImV4cCI6MTczODE0NjI4MH0.IwzLeEAoUrakVAdrX3acM8XznV96gphH7l6DveBGmvA
+}
