@@ -72,5 +72,5 @@ GET /{shortUrl}
 Projeye katkıda bulunmak isterseniz, fork alıp pull request gönderebilirsiniz.
 
 ---
-**Geliştirici:** Mehmet SOLAK 
-**GitHub:** [GitHub Profilim](https://github.com/knetic0) 
+- **Geliştirici:** Mehmet SOLAK 
+- **GitHub:** [GitHub Profilim](https://github.com/knetic0) 
