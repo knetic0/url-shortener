@@ -9,6 +9,7 @@ import com.mehmetsolak.urlshortener.entity.User;
 import com.mehmetsolak.urlshortener.service.UrlService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
@@ -25,7 +26,7 @@ public class UrlControllerImpl implements UrlController {
 
     @Override
     public Result<UrlDtoResponse> create(
-            @RequestBody UrlCreateRequest urlCreateRequest,
+            @Valid @RequestBody UrlCreateRequest urlCreateRequest,
             HttpServletRequest request
     ) throws NoSuchAlgorithmException {
         final User user = (User) request.getAttribute("user");

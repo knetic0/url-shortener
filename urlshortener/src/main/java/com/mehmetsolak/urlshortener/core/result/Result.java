@@ -4,12 +4,14 @@ import lombok.Data;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.Map;
 
 @Data
 public class Result<T> implements Serializable {
     private boolean success;
     private String message;
     private T data;
+    private Map<String, String> errors;
 
     @Serial
     private static final long serialVersionUID = 1L;
@@ -33,5 +35,10 @@ public class Result<T> implements Serializable {
     public Result(boolean success, String message, T data) {
         this(success, message);
         this.data = data;
+    }
+
+    public Result(boolean success, String message, Map<String, String> errors) {
+        this(success, message);
+        this.errors = errors;
     }
 }

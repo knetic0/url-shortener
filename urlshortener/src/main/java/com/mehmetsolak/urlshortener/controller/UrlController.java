@@ -6,6 +6,7 @@ import com.mehmetsolak.urlshortener.dto.request.UrlCreateRequest;
 import com.mehmetsolak.urlshortener.dto.response.UrlDtoResponse;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
@@ -14,7 +15,7 @@ import java.security.NoSuchAlgorithmException;
 public interface UrlController {
     @PostMapping(RequestMappingField.URL_CREATE)
     Result<UrlDtoResponse> create(
-            @RequestBody UrlCreateRequest urlCreateRequest,
+            @Valid @RequestBody UrlCreateRequest urlCreateRequest,
             HttpServletRequest request
     ) throws NoSuchAlgorithmException;
 

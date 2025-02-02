@@ -12,6 +12,7 @@ import com.mehmetsolak.urlshortener.dto.response.UserDtoResponse;
 import com.mehmetsolak.urlshortener.entity.User;
 import com.mehmetsolak.urlshortener.service.AuthenticationService;
 import com.mehmetsolak.urlshortener.service.TokenService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -34,13 +35,13 @@ public final class AuthenticationControllerImpl implements AuthenticationControl
 
     @Override
     public Result<UserDtoResponse> register(
-            @RequestBody UserRegisterRequest userRegisterRequest
+            @Valid @RequestBody UserRegisterRequest userRegisterRequest
     ) {
         return authenticationService.register(userRegisterRequest);
     }
 
     @Override
-    public Result<UserLoginResponse> login(@RequestBody UserLoginRequest userLoginRequest) {
+    public Result<UserLoginResponse> login(@Valid @RequestBody UserLoginRequest userLoginRequest) {
         Result<User> result = authenticationService.login(userLoginRequest);
         if(!result.isSuccess()) {
             return new FailureResult<>(result.getMessage());
