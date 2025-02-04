@@ -1,5 +1,6 @@
 package com.mehmetsolak.urlshortener.interceptor;
 
+import com.mehmetsolak.urlshortener.constants.RequestHeaderFieldName;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.NonNull;
@@ -19,7 +20,7 @@ public class SecurityKeyInterceptor implements HandlerInterceptor {
             @NonNull HttpServletResponse response,
             @NonNull Object handler
     ) {
-        final String securityKey = request.getHeader("X-Security-Key");
+        final String securityKey = request.getHeader(RequestHeaderFieldName.X_SECURITY_KEY);
 
         if(!expectedSecurityKey.equals(securityKey)) {
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
